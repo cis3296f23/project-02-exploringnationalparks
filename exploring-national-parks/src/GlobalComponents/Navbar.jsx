@@ -31,6 +31,9 @@ const Navbar = () => {
                 <li>
                     <NavLink to="/ParkPlan">Park Planner</NavLink>
                 </li>
+                <li>
+                    <NavLink to="/NewsPage">News</NavLink>
+                </li>
             </ul>
         </nav>
     )
