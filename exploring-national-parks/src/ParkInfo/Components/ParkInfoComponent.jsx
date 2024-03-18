@@ -11,6 +11,7 @@ import React, { useState, useEffect } from 'react';
 import { ParkInfo } from '../Functionality/ParkInfo'; // Importing the functionality
 import '../../Style/parkInfo.css';
 import ParkVideos from './ParkVideos';
+import ParkRating from './ParkRating';
 
 function ParkInfoComponent() {
     const [parkJSON, setParks] = useState([]);
@@ -98,6 +99,7 @@ function ParkInfoComponent() {
                                         {park.addresses[0].city}, 
                                         {park.addresses[0].stateCode}<br></br>
                                     </address>
+                                    <ParkRating initialRating={0} onChange={(value) => console.log(value)} />
                                     <br></br>
                                 </center>
                             </div>
