@@ -2,7 +2,7 @@ import React from 'react';
 import ParkInfoComponent from './ParkInfo/Components/ParkInfoComponent.jsx';
 import './Style/ParkSafety.css';
 /**
- * Renders the ParkSafety component page...
+ * Renders the ParkSafety component page.....
  * 
  * @component
  * @module ParkSafety
