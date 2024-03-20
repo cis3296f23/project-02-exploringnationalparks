@@ -105,6 +105,14 @@ const Filtering = ({updateParkCode, updateDates, updateActivities}) => {
             <div className="plan-calendar-background">
             <div className="plan-calendar">
                 <h2 id="date-range-title">Select a Date Range</h2>
+                <div><label for="userInput">Enter Start Date: </label></div>
+                
+                <input type="date" id="userInput"></input>
+                <button onclick="getDate()">Submit</button>
+                <div><label for="userInput">Enter End Date: </label></div>
+                <input type="date" id="userInput"></input>
+                <button onclick="getDate()">Submit</button>
+                
                 <Calendar 
                     selectRange={true}
                     hover={true}
@@ -112,7 +120,7 @@ const Filtering = ({updateParkCode, updateDates, updateActivities}) => {
                     defaultValue={[new Date(), new Date()]}
                     returnValue={"start"}
                     onChange={setStartDate}
-                //    max date should be 7 days from the selected start date
+                //  max date should be 7 days from the selected start date
                 
                 /> 
             </div>

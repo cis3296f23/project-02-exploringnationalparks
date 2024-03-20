@@ -10,6 +10,8 @@
  */
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import DatePicker from 'react-datepicker';
+
 import { FetchForecast } from '../Functions/FetchForecast';
 import { act } from 'react-dom/test-utils';
 import { FetchThingsToDo } from '../Functions/FetchThingsToDo';
@@ -18,7 +20,11 @@ import { FetchPlaces } from '../Functions/FetchPlaces';
 import { FetchPeople } from '../Functions/FetchPeople';
 import '../../Style/parkPlanning.css';
 
+
+
 const Schedule = ({ dates, parkCode, activities}) => {
+
+    
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
     const [datesArray, setDatesArray] = useState([]);
@@ -54,8 +60,6 @@ const Schedule = ({ dates, parkCode, activities}) => {
         }
         if (dates !== null) {
             try {
-
-
                 setStartDate(dates[0].toLocaleDateString());
                 if (dates[1]) {
                     setEndDate(dates[1].toLocaleDateString());
