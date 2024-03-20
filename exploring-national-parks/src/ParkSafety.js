@@ -1,20 +1,14 @@
-import React from 'react';
-import ParkInfoComponent from './ParkInfo/Components/ParkInfoComponent.jsx';
-import './Style/ParkSafety.css';
+import React from "react";
 /**
  * Renders the ParkSafety component page.....
- * 
+ *
  * @component
  * @module ParkSafety
- * 
+ *
  * @returns {JSX.Element} The rendered ParkInfo component.
  */
-function ParkSafety(){
-    return(
-        <div className="park-info-parent">
-            <ParkInfoComponent />
-        </div>
-    );
+function ParkSafety() {
+  return <ParkSafetyComponent />;
 }
 
-export default ParkInfo;
+export default ParkSafety;
