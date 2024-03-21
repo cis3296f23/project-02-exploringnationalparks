@@ -24,8 +24,10 @@ const Buttons = () => {
             <div className = "button-container">
                 <p>Plan A Trip To A National Park</p>
                 <Link className="homepage-button" to='/ParkPlan'><button className="homepage-button">Plan a Trip</button></Link>
-            </div>               
+            </div>  
+                         
         </div>
+       
     )
 }
 
