@@ -1,0 +1,50 @@
+.safetyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 24px;
+}
+
+.parentSafety {
+  margin-top: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  height: 100%;
+}
+.safetyHeading {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 75px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5) 100%,
+    rgba(255, 255, 255, 1) 0%
+  );
+}
+
+.safety-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-style: solid;
+}
+.cardImage {
+  background: center;
+  background: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.learn-more-name {
+  font-weight: bold;
+}
+.description {
+  padding: 8px 32px;
+}
