@@ -22,6 +22,7 @@ import ParkPlan from "./ParkPlan.js";
 import Navbar from "./GlobalComponents/Navbar.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./GlobalComponents/Footer.jsx";
+import ParkSafety from "./ParkSafety.js";
 import "./Style/main.css";
 import ParkSafety from "./ParkSafety.js"
 
