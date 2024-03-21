@@ -33,7 +33,7 @@ const parkSafety = [
   },
   {
     img: "./trash.jpeg",
-    heading: "Pack Out Your Trash:",
+    heading: "Pack Out Your Trash",
     content:
       "Leave no trace by carrying out all trash and disposing of it properly.",
   },

@@ -1,4 +1,6 @@
 import React from "react";
+import ParkInfoComponent from "./ParkInfo/Components/ParkInfoComponent";
+import ParkSafetyComponent from "./ParkSafety/Components/ParkSafetyComponent";
 /**
  * Renders the ParkSafety component page.....
  *
@@ -8,7 +10,7 @@ import React from "react";
  * @returns {JSX.Element} The rendered ParkInfo component.
  */
 function ParkSafety() {
-  return <ParkSafetyComponent />;
+  return <ParkSafetyComponent/>;
 }
 
 export default ParkSafety;
