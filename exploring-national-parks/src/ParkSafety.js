@@ -1,5 +1,5 @@
 import React from "react";
-import ParkInfoComponent from "./ParkInfo/Components/ParkInfoComponent";
+//import ParkInfoComponent from "./ParkInfo/Components/ParkInfoComponent";
 import ParkSafetyComponent from "./ParkSafety/Components/ParkSafetyComponent";
 /**
  * Renders the ParkSafety component page.....

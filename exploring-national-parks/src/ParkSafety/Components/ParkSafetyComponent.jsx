@@ -1,5 +1,6 @@
 import React from "react";
 import "../../Style/ParkSafety.css";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 const parkSafety = [
   {
     img: "./marked_trail.jpeg",
@@ -38,23 +39,30 @@ const parkSafety = [
       "Leave no trace by carrying out all trash and disposing of it properly.",
   },
 ];
+
 function ParkSafetyComponent() {
   return (
     <div className="parentSafety">
       <div className="safetyHeading">
         <h1>Explore Safely</h1>
         <h4>Your Guide to Park Adventure and Protection!</h4>
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName="TempleUniv"
+          options={{ height: 200 }}
+        />
       </div>
       <div className="safetyGrid">
-        {parkSafety.map((item) => {
+        {parkSafety.map((item, index) => {
           return (
-            <div className="safety-card">
+            <div className="safety-card" key={index}>
               <div>
                 <h4 className="learn-more-name">{item.heading}</h4>
               </div>
               <div
                 className="cardImage"
-                style={{ backgroundImage: `url(${item.img})` }}></div>
+                style={{ backgroundImage: `url(${item.img})` }}
+              ></div>
 
               <p className="description">{item.content}</p>
             </div>
