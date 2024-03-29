@@ -49,7 +49,16 @@ const Welcome = () => {
     }, []); // Empty dependency array to run only once after initial render
 
     const convertToCelsius = temp => {
-        return Math.round((temp - 32) * (5/9));
+        return Math.round(temp - 273.15);
+    };
+
+    const convertToFahrenheit = temp => {
+        return Math.round((temp - 273.15) * 9/5 + 32);
+    };
+
+    const convertToLocalTime = timestamp => {
+        const date = new Date(timestamp * 1000);
+        return date.toLocaleString('en-US', { timeZone: 'America/New_York' });
     };
 
     return (
@@ -68,19 +77,19 @@ const Welcome = () => {
                 {weatherData && (
                     <>
                         <img id="weather-icon" src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="Weather Icon" />
-                        <div id="temp-div">{convertToCelsius(weatherData.main.temp)}°C / {weatherData.main.temp}°F</div>
+                        <div id="temp-div">{convertToCelsius(weatherData.main.temp)}°C / {convertToFahrenheit(weatherData.main.temp)}°F</div>
                         <div id="weather-info">{weatherData.weather[0].description}</div>
                     </>
                 )}
 
                 {hourlyForecastData.length > 0 && (
                     <div id="hourly-forecast">
-                        <h3>Next 5 Hours Forecast:</h3>
+                        <h4>Next 5 Hours Forecast:</h4>
                         {hourlyForecastData.map((item, index) => (
                             <div key={index} className="hourly-item">
-                                <span>{new Date(item.dt * 1000).getHours()}:00</span>
+                                <span>{convertToLocalTime(item.dt)}</span>
                                 <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`} alt="Hourly Weather Icon" />
-                                <span>{convertToCelsius(item.main.temp)}°C / {item.main.temp}°F</span>
+                                <span>{convertToCelsius(item.main.temp)}°C / {convertToFahrenheit(item.main.temp)}°F</span>
                             </div>
                         ))}
                     </div>
