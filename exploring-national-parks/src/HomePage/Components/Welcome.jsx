@@ -7,6 +7,8 @@ import React, { useState, useEffect } from 'react';
  * @returns {JSX.Element} The rendered welcome section.
  */
 const Welcome = () => {
+            <a class="twitter-timeline" data-lang="en" data-height="300"  href="https://twitter.com/TempleUniv?ref_src=twsrc%5Etfw">Tweets by TempleUniv</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
     const [city, setCity] = useState('Philadelphia'); // Set default city to Philadelphia
     const [weatherData, setWeatherData] = useState(null);
     const [hourlyForecastData, setHourlyForecastData] = useState([]);
