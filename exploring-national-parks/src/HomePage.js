@@ -11,6 +11,7 @@ import yosemite from './HomePage/Assets/yosemite.jpg';
 import './Style/homepage.css'
 import HighlightGallery from './HomePage/Components/HighlightGallery';
 import TwitterTimeline from './TempleTimeline/Components/TempleTimeline';
+import BackToTop from './GlobalComponents/BackToTop';
 const HomePage = () => {
   return (
     // <Navbar/>
@@ -20,6 +21,7 @@ const HomePage = () => {
         <HighlightGallery/>
         <Buttons/>
         <TwitterTimeline/>
+        <BackToTop />
     </div>
   )
 }

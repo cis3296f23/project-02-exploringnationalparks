@@ -7,12 +7,14 @@
 import React from 'react'
 import ParkPlanParent from './ParkPlan/Components/Parent'
 import Banner from './ParkPlan/Components/Banner'
+import BackToTop from './GlobalComponents/BackToTop';
 const ParkPlan = () => {
   return (
     <div className="park-plan">
       
       <Banner/>
       <ParkPlanParent />
+      <BackToTop />
     </div>
   )
 }
