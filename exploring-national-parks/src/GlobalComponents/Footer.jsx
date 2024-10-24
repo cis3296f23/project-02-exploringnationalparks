@@ -1,4 +1,6 @@
 import React from "react";
+import { FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+
 import "../Style/footer.css";
 
 /**
@@ -14,11 +16,18 @@ const Footer = () => {
     <div className="footer">
       <span>
         <p>Exploring National Parks</p>
-        <img
-          src="https://web.archive.org/web/20091027005003im_/http://it.geocities.com/aniellobarra/Img/Clip/Animated/tree.gif"
-          alt=""
-        />
       </span>
+      <div className="social-media">
+        <a href="https://x.com/TempleUniv" target="_blank" rel="noopener noreferrer">
+          <FaTwitter size={48} />
+        </a>
+        <a href="https://www.instagram.com/templeuniv/" target="_blank" rel="noopener noreferrer">
+          <FaInstagram size={48} />
+        </a>
+        <a href="https://www.linkedin.com/school/templeuniversity/" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin size={48} />
+        </a>
+      </div>
     </div>
   );
 };
