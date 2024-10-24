@@ -86,6 +86,7 @@ body{
 }
 
 .plan-search-button {
+    background-color: rgba(175, 200, 170, 0.8);
     font-size: larger;
     height: 4rem;
     border-radius: 10px;

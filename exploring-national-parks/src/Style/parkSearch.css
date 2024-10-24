@@ -59,6 +59,7 @@
 }
 
 .park-search .activities-list .search-button-grid .search-button {
+    background-color: rgba(175, 200, 170, 0.8);
     font-size: medium;
 }
 
@@ -75,6 +76,7 @@
 }
 
 .activities-list .activity-dropdown .activity-search-button {
+    background-color: rgba(175, 200, 170, 0.8);
     width: 25%;
     border-radius: 10px;
     font-size: larger;
@@ -171,7 +173,8 @@
   }
 
   .learn-more-button {
-    width: 100%;
+      background-color: rgba(175, 200, 170, 0.8);
+      width: 100%;
     height: 100%;
     font-family: "Times New Roman", Times, serif;
     font-size: larger;
