@@ -34,7 +34,9 @@ const FAQ = () => {
                 />
             </p>
             <div>
-
+                <h3>
+                    This information was taken from the NPS Public Website. To learn more, please visit <a href="https://www.nps.gov/aboutus/faqs.htm" target="_blank" >NPS</a>
+                </h3>
             </div>
         </div>
     )
