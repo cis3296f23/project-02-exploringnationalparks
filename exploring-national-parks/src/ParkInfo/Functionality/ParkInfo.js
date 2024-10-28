@@ -29,7 +29,6 @@ export const ParkInfo = async (parkCode, page) => {
     const json = await response.json();
     // Cache the response to localStorage
     localStorage.setItem(parkCode, JSON.stringify(json));
-
     return json;
   } catch (error) {
     console.error(error.message);

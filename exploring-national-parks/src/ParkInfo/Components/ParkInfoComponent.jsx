@@ -8,12 +8,15 @@
  */
 // ParkInfoComponent.jsx
 import React, { useState, useEffect } from 'react';
-import { ParkInfo } from '../Functionality/ParkInfo'; // Importing the functionality
+import { ParkInfo } from '../Functionality/ParkInfo'; // Importing the park info functionality
+import { Weather } from '../Functionality/Weather'; // Importing the weather functionality
 import '../../Style/parkInfo.css';
 import ParkVideos from './ParkVideos';
+import snowflakeIcon from '../../Icons/snowflake.png';
 
 function ParkInfoComponent() {
     const [parkJSON, setParks] = useState([]);
+    const [parksWithWeather, setParksWithWeather] = useState([]);
     
     var url = new URL(window.location);
     var page = 0;
@@ -31,14 +34,23 @@ function ParkInfoComponent() {
         const fetchData = async () => {
             try {
                 var json;
+                var weather;
 
                 //const parkCode = window.location.hash.substring(1); //hash value from selecting a park removing hash char
                 if(parkCode == null)
                     json = await ParkInfo('', page);
                 else
                     json = await ParkInfo(parkCode, 0);
-                console.log(json);
+                //console.log(json);
                 setParks(json.data);
+
+                /* weather = await Promise.all(parkJSON.map((park) => (
+                        Weather(park.latitude, park.longitude)
+                    )))
+                setParksWithWeather(parkJSON.map((item, index) => ({...item, weather: weather[index]})));
+                console.log(' in use effect');
+                console.log(json);
+                console.log(parksWithWeather); */
             } catch (error) {
                 // Handle the error, if needed
             }
@@ -47,7 +59,35 @@ function ParkInfoComponent() {
         fetchData();
     }, []);
 
-    if(parkJSON.length>1){ //list all the parks
+    useEffect(() => {
+        console.log("in fetch weather data effect");
+        const fetchWeatherData = async () => {
+            if (parkJSON.length > 0){
+                try{
+                    var weather;
+                    weather = await Promise.all(parkJSON.map((park) => (
+                        Weather(park.latitude, park.longitude)
+                    )))
+                setParksWithWeather(parkJSON.map((item, index) => ({...item, weather: weather[index]})));
+                }
+                catch (error) {
+                    // Handle the error, if needed
+                }
+            }
+            
+            
+        };
+
+        fetchWeatherData();
+    }, [parkJSON]);
+
+    console.log("park json: ");
+    console.log(parkJSON);
+    console.log("weather json: ");
+    //console.log(weatherJsonList);
+    console.log(parksWithWeather);
+
+    if(parksWithWeather.length>1){ //list all the parks
         return (
             <div className="top-padding-info">
                 <div className='all-parks-info-welcome'>
@@ -60,7 +100,7 @@ function ParkInfoComponent() {
                 <div className = 'parkInfo'>
                     <div className="parks">
 
-                        {parkJSON?.map((park) => (
+                        {parksWithWeather?.map((park) => (
                             <div key={park.id} className="post-card">
                             <a className='park-info-link' href={'ParkInfo?parkCode='+park.parkCode}>
                             <div>
@@ -74,6 +114,8 @@ function ParkInfoComponent() {
                                     <img src={park.images.length !== 0  ? park.images[0].url : ''} alt='' width='100' height='300'/>
                             </div>
                             <p className="description">{park.description}</p>
+                            <p className="description">Current Temperature: {park.weather.current.temperature_2m} °C</p>
+                            <img src = {snowflakeIcon} className="weatherIcon" />
                             </a>
                         </div>
                         ))}
@@ -87,7 +129,7 @@ function ParkInfoComponent() {
     else{ //detail for one park
         return (
             <div className='park-info'>
-                    {parkJSON?.map((park) => (
+                    {parksWithWeather?.map((park) => (
                         <>
                         <div key={park.id} className="parkInfo" style={{ backgroundImage: 'url(' + park.images[0].url + ')', backgroundSize: 'auto' }}>
                             <div className='park-info-welcome'>
