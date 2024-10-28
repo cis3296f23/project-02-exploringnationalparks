@@ -38,7 +38,6 @@ function ParkInfoComponent() {
         const fetchData = async () => {
             try {
                 var json;
-                var weather;
 
                 //const parkCode = window.location.hash.substring(1); //hash value from selecting a park removing hash char
                 if(parkCode == null)
