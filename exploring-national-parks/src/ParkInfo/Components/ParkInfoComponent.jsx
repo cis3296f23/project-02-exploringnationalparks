@@ -13,6 +13,10 @@ import { Weather } from '../Functionality/Weather'; // Importing the weather fun
 import '../../Style/parkInfo.css';
 import ParkVideos from './ParkVideos';
 import snowflakeIcon from '../../Icons/snowflake.png';
+import cloudIcon from '../../Icons/cloud.png';
+import rainIcon from '../../Icons/rainy.png';
+import sunIcon from '../../Icons/sun.png';
+import stormIcon from '../../Icons/thunderstorm.png';
 
 function ParkInfoComponent() {
     const [parkJSON, setParks] = useState([]);
@@ -114,8 +118,15 @@ function ParkInfoComponent() {
                                     <img src={park.images.length !== 0  ? park.images[0].url : ''} alt='' width='100' height='300'/>
                             </div>
                             <p className="description">{park.description}</p>
-                            <p className="description">Current Temperature: {park.weather.current.temperature_2m} °C</p>
-                            <img src = {snowflakeIcon} className="weatherIcon" />
+                            <div className="weather">
+                            <p className="description">Current weather: {park.weather.current.temperature_2m} °C</p>
+                            <img src = {(park.weather.current.weather_code) == 0 ? sunIcon :
+                                [71, 73, 75, 77, 85, 86].includes(park.weather.current.weather_code)? snowflakeIcon : 
+                                [95, 96, 99].includes(park.weather.current.weather_code)? stormIcon : 
+                                [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(park.weather.current.weather_code)? rainIcon : 
+                                cloudIcon} className="weatherIcon" />
+                            </div>
+                            
                             </a>
                         </div>
                         ))}
