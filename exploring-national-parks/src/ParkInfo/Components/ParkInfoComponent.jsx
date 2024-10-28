@@ -45,16 +45,8 @@ function ParkInfoComponent() {
                     json = await ParkInfo('', page);
                 else
                     json = await ParkInfo(parkCode, 0);
-                //console.log(json);
                 setParks(json.data);
 
-                /* weather = await Promise.all(parkJSON.map((park) => (
-                        Weather(park.latitude, park.longitude)
-                    )))
-                setParksWithWeather(parkJSON.map((item, index) => ({...item, weather: weather[index]})));
-                console.log(' in use effect');
-                console.log(json);
-                console.log(parksWithWeather); */
             } catch (error) {
                 // Handle the error, if needed
             }
@@ -78,18 +70,10 @@ function ParkInfoComponent() {
                     // Handle the error, if needed
                 }
             }
-            
-            
         };
 
         fetchWeatherData();
     }, [parkJSON]);
-
-    console.log("park json: ");
-    console.log(parkJSON);
-    console.log("weather json: ");
-    //console.log(weatherJsonList);
-    console.log(parksWithWeather);
 
     if(parksWithWeather.length>1){ //list all the parks
         return (
@@ -192,8 +176,14 @@ function ParkInfoComponent() {
                                 <div className='activity'><p key={activity.id}>{activity.name}</p></div></>))}
                             </div>
 
-                            
-                            
+                            <div className="weather">
+                            <p className="description">Current weather: {park.weather.current.temperature_2m} °C</p>
+                            <img src = {(park.weather.current.weather_code) == 0 ? sunIcon :
+                                [71, 73, 75, 77, 85, 86].includes(park.weather.current.weather_code)? snowflakeIcon : 
+                                [95, 96, 99].includes(park.weather.current.weather_code)? stormIcon : 
+                                [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(park.weather.current.weather_code)? rainIcon : 
+                                cloudIcon} className="weatherIcon" />
+                            </div>
                         </div>
                         </>
                     ))}

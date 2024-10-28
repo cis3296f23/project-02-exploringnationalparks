@@ -25,8 +25,6 @@ export const Weather = async (latitude, longitude) => {
       const json = await response.json();
       return json;
     } catch (error) {
-      console.log(latitude);
-      console.log(longitude);
       console.error(error.message);
       throw error;
     }
