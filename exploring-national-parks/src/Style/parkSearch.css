@@ -183,3 +183,22 @@
     text-align: center;
     padding: 0px 10px;    
 }
+.btn-list{
+    display: flex;
+    margin:10px 0px;
+    justify-content: center;
+}
+.activity-button{
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+.activity-button +.activity-button{
+    margin-left: 10px;
+}
+.activity-button:not(:disabled):hover {
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+}
