@@ -8,12 +8,19 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     width: 100%;
-
-
+    position: fixed; /* Makes the footer fixed at the bottom */
+    bottom: 0; /* Positions it at the very bottom of the viewport */
+    left: 0;
+    z-index: 1000; /* Ensures the footer stays on top of other content */
 }
 
 .footer img {
     width: 20px;
     height: 20px;
     margin: 0px 5px;
+}
+
+/* To prevent content from being hidden behind the footer */
+body {
+    padding-bottom: 50px; /* Adjust this value to match the height of your footer */
 }

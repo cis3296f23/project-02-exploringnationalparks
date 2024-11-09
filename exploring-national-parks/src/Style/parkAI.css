@@ -1,0 +1,135 @@
+/* Main styling for the ParkAI component */
+.park-ai {
+    background-color: #f4f9f4; /* Light background color */
+    color: #333; /* Dark gray text */
+    font-family: 'Inter', sans-serif; /* Modern, clean sans-serif font */
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Title styling */
+.park-ai #ai-title {
+    text-align: center;
+    font-size: 2rem; /* Smaller title font size */
+    color: #4caf50; /* Soft green for consistency */
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif; /* Clean sans-serif font for the title */
+}
+
+/* Recipe container styling */
+.park-ai .recipe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white; /* Solid white background */
+    padding: 2rem;
+    color: black;
+    font-size: 1rem; /* Smaller font size for better readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Recipe name styling */
+.park-ai .recipe-container h2 {
+    font-size: 1.5rem; /* Smaller font size for the recipe name */
+    color: #333;
+    margin-top: 2rem; /* Space between name and image */
+    font-weight: 600; /* Bold font for the name */
+    margin-bottom: 1rem; /* Space after recipe name to create a break before description */
+}
+
+/* Recipe description styling */
+.park-ai .recipe-container p {
+    font-size: 1.125rem; /* Slightly smaller font size for better readability */
+    color: #555;
+    line-height: 1.6;
+    margin-top: 1.5rem; /* More space between description and name */
+    text-align: center; /* Center-align the text */
+    font-family: 'Merriweather', serif; /* Consistent font for description */
+}
+
+/* Recipe image styling */
+.park-ai .recipe-image {
+    width: 100%;
+    max-width: 400px; /* Make image smaller */
+    height: auto;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+.park-ai .ask-ai-button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #4caf50; /* Green button like homepage */
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 300px; /* Minimum width for consistency */
+}
+
+.park-ai .ask-ai-button:hover {
+    background-color: #388e3c;
+    cursor: pointer;
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .park-ai {
+        padding: 2rem 1rem;
+    }
+
+    .park-ai #ai-title {
+        font-size: 2rem; /* Smaller title on small screens */
+    }
+
+    .park-ai .recipe-container {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .park-ai .recipe-container h2 {
+        font-size: 1.25rem; /* Smaller font size for the name on small screens */
+    }
+
+    .park-ai .recipe-container p {
+        font-size: 1rem; /* Smaller font size for description */
+    }
+
+    .park-ai .recipe-image {
+        max-width: 90%;
+    }
+
+    .park-ai .ask-ai-button {
+        font-size: 1.1rem;
+        min-width: 250px;
+    }
+}
+
+.save-button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.save-button:hover {
+    background-color: #4cae4c;
+}
+

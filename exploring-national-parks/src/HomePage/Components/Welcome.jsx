@@ -8,14 +8,14 @@ import React from 'react'
  */
 const Welcome = () => {
     return (
-        <div className = "welcome">
-            <h1 className = "welcome-title">Explore National Parks</h1>
-            <p className = "welcome-text">
-                Welcome to Exploring National Parks! This web app is designed to help you find the perfect national park for your next trip. 
-                Click on the "Park Search" button to search for a park by activity, or click on the "Plan A Trip" button to plan a trip to a park you've already selected.
+        <div className="welcome">
+            <h1 className="welcome-title">Meal Prep Made Easy</h1>
+            <p className="welcome-text">
+                Welcome to the Meal Prep App! This web app is designed to help you plan delicious and healthy meals for the week. 
+                Click on "Get Recipes" to discover new recipes tailored to your preferences, or click on "Weekly Meal Plan" to organize your weekly meals and stay on track with your goals.
             </p>
             <div>
-
+                {/* Additional content (if needed) */}
             </div>
         </div>
     )
